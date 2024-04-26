@@ -1,0 +1,35 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "ms-load-balancer",
+    "collectionId": "407e08d2-efc1-4832-a6d2-25de40e0cb7a",
+    "dateExported": "2024-04-26T10:58:50.995Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "14d2bfc7-7428-43f9-97c7-e1db0832fb5a",
+            "colId": "407e08d2-efc1-4832-a6d2-25de40e0cb7a",
+            "containerId": "",
+            "name": "http://127.0.0.1:5000/heartbeat",
+            "url": "http://127.0.0.1:5000/heartbeat",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-26T10:55:51.086Z",
+            "modified": "2024-04-26T10:56:33.835Z",
+            "headers": []
+        },
+        {
+            "_id": "6020900d-0572-4479-855c-fac6994d6bcb",
+            "colId": "407e08d2-efc1-4832-a6d2-25de40e0cb7a",
+            "containerId": "",
+            "name": "http://127.0.0.1:5000/home",
+            "url": "http://127.0.0.1:5000/home",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-26T10:57:08.910Z",
+            "modified": "2024-04-26T10:57:08.910Z",
+            "headers": []
+        }
+    ],
+    "ref": "Lj4Wx71sUb_Bhb9tRM9KQna02f9WRpljPIEtYZbLLU_eCTAAirIglEO239GhlqW7TnQixMe1d8mhrAKCksbgcw"
+}
