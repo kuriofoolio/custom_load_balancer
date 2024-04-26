@@ -7,7 +7,6 @@ app=Flask(__name__)
 def home():
     response_data = {'message': f'Hello from Server {socket.gethostname()}', 'status code':200}
     return jsonify(response_data)
-    # return f"Hello from Server {socket.gethostname()}"
 
 @app.route('/heartbeat', methods=['GET'])
 def heartbeat():
