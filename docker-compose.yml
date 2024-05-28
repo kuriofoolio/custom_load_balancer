@@ -1,0 +1,33 @@
+version: '3'
+services:
+  load_balancer:
+    build: .
+    ports:
+      - "5000:5000"
+    networks:
+      - lb-network
+
+  server1:
+    image: your_server_image
+    networks:
+      - lb-network
+    depends_on:
+      - load_balancer
+
+  server2:
+    image: your_server_image
+    networks:
+      - lb-network
+    depends_on:
+      - load_balancer
+
+  server3:
+    image: your_server_image
+    networks:
+      - lb-network
+    depends_on:
+      - load_balancer
+
+networks:
+  lb-network:
+    driver: bridge
