@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install --no-cache-dir flask
+RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 5000
-
-CMD ["python", "load_balancer.py"]
+CMD gunicorn --bind 0.0.0.0:5000 wsgi:app
