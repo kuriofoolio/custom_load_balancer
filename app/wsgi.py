@@ -18,7 +18,7 @@ def home():
 
 @app.route('/heartbeat', methods=['GET'])
 def heartbeat():
-    response_data = {'message': 'Server is up and running', 'status code':200}
+    response_data = {'message': f'Server {socket.gethostname()} is up and running', 'status code':200}
     return jsonify(response_data)
 
 if __name__ == '__main__':
