@@ -32,7 +32,7 @@ This project involves creating a load balancer using consistent hashing to manag
 4. Python 3.11.4 or higher
 5. Windows Operating System
 
-## Installation Instructions
+## Steps
 
 1. Clone the Repository to your machine
 
@@ -127,7 +127,7 @@ Once you have the load balancer and web server containers set up and running, yo
 
     ```
 
-    Example Resposible : 
+    Example Response : 
 
     ``` 
     {
