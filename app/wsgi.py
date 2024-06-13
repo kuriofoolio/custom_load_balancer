@@ -21,5 +21,6 @@ def heartbeat():
     response_data = {'message': f'Server {socket.gethostname()} is up and running', 'status code':200}
     return jsonify(response_data)
 
+
 if __name__ == '__main__':
     app.run(debug=True)
