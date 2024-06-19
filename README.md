@@ -32,6 +32,14 @@ This project involves creating a load balancer using consistent hashing to manag
 4. Python 3.11.4 or higher
 5. Windows Operating System
 
+Code-dependent requirements can be found and installed from app/requirements.txt
+   `` pip install -r app/requirements.txt ``
+
+You can append relevant requirements to the project as follows:
+   `` pip freeze > app/requirements.txt ``
+
+
+
 ## Steps
 
 1. Clone the Repository to your machine
