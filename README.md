@@ -73,8 +73,8 @@ Once you have the load balancer and web server containers set up and running, yo
 
  ``` {
     "message": {
-        "N": 3,
-        "replicas": ["Server 1", "Server 2", "Server 3"]
+        "N": len(servers),
+        "replicas": servers
     },
     "status": "successful"
 } 
