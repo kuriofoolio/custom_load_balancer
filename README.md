@@ -199,7 +199,7 @@ Using  docker-compose up -d --build --scale app=n, where n is the number of serv
 ![Code](C:/Users/MOBILE/Desktop/School/Year 4/DS Notes/n=5.png)
 ![Code](C:/Users/MOBILE/Desktop/School/Year 4/DS Notes/n=6.png)
 Then in the grapghs file, we plotted the averages for each instance and the result is as follows
-![Line Chart for Average Requests](C:/Users/MOBILE/Desktop/School/Year 4/Distributed Systems/custom_load_balancer/test/graphs/avg_req_line_chart.png)
+![Line Chart for Average Requests](https://github.com/kuriofoolio/custom_load_balancer/blob/main/avg_req_line_chart.png)
 
 ### Observation
 The system scaled well with the increasing number of server instances. The load balancer randomly and effectively distributed the 10000 requests across 2 to 6 servers, indicating good scalability.
