@@ -193,12 +193,12 @@ The load balancer employs a random distribution which is shown in the uneven dis
 ## 2. Increment N from 2 to 6 and Launch 10,000 Requests on Each Increment
 
 ### Process
-Using  docker-compose up -d --build --scale app=n, where n is the number of servers, we incremented the number of server replicas from 2 to 6 and run docker ps for each instance to check if each server us running and re-run async_requests file to return the count of requests handled by each server.
+Using  docker-compose up -d --build --scale app=n, where n is the number of servers, we incremented the number of server replicas from 2 to 6 and run docker ps for each instance to check if each server is running and re-run async_requests file to return the count of requests handled by each server.
 ![Code](https://github.com/kuriofoolio/custom_load_balancer/blob/main/n%3D2.png)
 ![Code](https://github.com/kuriofoolio/custom_load_balancer/blob/main/n%3D4.png)
 ![Code](https://github.com/kuriofoolio/custom_load_balancer/blob/main/n%3D5.png)
 ![Code](https://github.com/kuriofoolio/custom_load_balancer/blob/main/n%3D6.png)
-Then in the grapghs file, we plotted the averages for each instance and the result is as follows
+Then in the graphs file, we plotted the averages for each instance and the result is as follows
 ![Line Chart for Average Requests](https://github.com/kuriofoolio/custom_load_balancer/blob/main/avg_req_line_chart.png)
 
 ### Observation
