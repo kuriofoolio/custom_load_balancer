@@ -184,9 +184,9 @@ Routing Requests: The endpoint /<path> can be used to route requests. Currently,
 
 ### Process
 By default, the system has N=3 active replicas. To perform this task, we created a file to launch the 10,000 requests and requested the load balancer to return the count of the requests handled by each server
-![Code](C:/Users/MOBILE/Desktop/School/Year 4/DS Notes/n=3.png)
+![Code](https://github.com/kuriofoolio/custom_load_balancer/blob/main/n%3D3.png)
 We then created a graphs file to plot the results and return the bar graph
-![Bar Chart for N=3](C:/Users/MOBILE/Desktop/School/Year 4/Distributed Systems/custom_load_balancer/test/graphs/bar_chart_3_servers.png)
+![Code](https://github.com/kuriofoolio/custom_load_balancer/blob/main/bar_chart_3_servers.png)
 ### Observation
 The load balancer employs a random distribution which is shown in the uneven distribution of the 10000 requests across the 3 servers. Despite the uneven distribution, each server successfully handled its share of requests without any failures.
 
