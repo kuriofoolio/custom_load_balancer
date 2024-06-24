@@ -325,6 +325,18 @@ Example Response :
 
 ```
 
+## 4. Modification of Hash function
+We modified the initial hash function H(i), Φ(i, j). After running the load balancer with the new hash functions with the first two tests, the load distribution was even and the overral performance and response time was stable. The modified hash function is shown below.
+
+```
+ def hash(self, key):
+        return (hash(key) * 3 + 5 * hash(key) + 19 * math.log(3)) % self.num_slots
+
+ def position(self, i, j):
+         return (self.hash(i) + j * self.hash(i + j)) % self.num_slots
+
+```
+        
 
 
 
