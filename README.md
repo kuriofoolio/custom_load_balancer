@@ -178,7 +178,7 @@ Scaling Up: To add more server replicas, ensure that the payload in the POST req
 Scaling Down: To remove server replicas, ensure that the DELETE request to /rm specifies the correct number of instances to be removed and their hostnames if preferred.
 
 Routing Requests: The endpoint /<path> can be used to route requests. Currently, only the /home path is recognized by the server replicas as per the provided code.
-# Task 4- Analysis
+# Project Analysis
 
 ## 1. Launch 10,000 Async Requests on N = 3 Server Containers
 
