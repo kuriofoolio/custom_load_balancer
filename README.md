@@ -211,6 +211,122 @@ Then in the graphs file, we plotted the averages for each instance and the resul
 ### Observation
 The system scaled well with the increasing number of server instances. The load balancer randomly and effectively distributed the 10000 requests across 2 to 6 servers, indicating good scalability.
 
+## 3. Testing of all endpoints of the load balancer incase of server failure
+In the case of a server failure, the end-points of the load balancer run successfully after testing by spawning a new instance to handle the load.
+1. Checking status of Replicas 
+
+  Endpoint: /rep
+  Method: GET
+  Description: Returns the current status of the replicas managed by the load balancer.
+  
+  Example Request : 
+
+     `` curl http://localhost:5000/rep ``
+
+  Example Response : 
+
+ ``` {
+    "message": {
+        "N": len(servers),
+        "replicas": servers
+    },
+    "status": "successful"
+} 
+ ```
+
+
+2. Adding New replicas
+
+    Endpoint: /add
+    Method: POST
+    Description: Adds new server instances to scale up the system.
+
+    Request Payload:
+
+    n: The number of new instances to add.
+    hostnames (optional): A list of preferred hostnames for the new instances.
+
+
+    Example Request : 
+
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{
+    "n": 2,
+    "hostnames": ["S4", "S5"]
+    }' http://localhost:5000/add
+
+    ```
+
+    Example Response : 
+
+    ```
+
+    {
+    "message": {
+        "N": 5,
+        "replicas": ["Server 1", "Server 2", "Server 3", "S4", "S5"]
+    },
+    "status": "successful"
+    }
+
+    ```
+3. Removing Replicas
+
+    Endpoint: /rm
+    Method: DELETE
+    Description: Removes server instances to scale down the system.
+
+    Request Payload:
+
+    * n: The number of instances to remove
+    * hostnames(optiobal) : A list of preferred hostnames for the instances to remove. 
+
+    Example Request : 
+
+    ``` 
+    curl -X DELETE -H "Content-Type: application/json" -d '{
+    "n": 2,
+    "hostnames": ["S4", "S5"]
+    }' http://localhost:5000/rm
+
+    ```
+
+    Example Response : 
+
+    ``` 
+    {
+    "message": {
+        "N": 3,
+        "replicas": ["Server 1", "Server 2", "Server 3"]
+    },
+    "status": "successful"
+    }
+
+    ```
+
+4. Routing Client Requests
+
+Endpoint: /<path>
+Method: GET
+Description: Routes requests to a server replica based on the consistent hashing algorithm.
+
+Example Request :
+
+`` curl http://localhost:5000/home ``
+
+Example Response : 
+
+```
+
+{
+    "message": "Request routed to Server 1",
+    "status": "successful"
+}
+
+```
+
+
+
 
 
 
