@@ -336,7 +336,8 @@ We modified the initial hash function H(i), Φ(i, j). After running the load bal
          return (self.hash(i) + j * self.hash(i + j)) % self.num_slots
 
 ```
-##Conclusion
+
+## Conclusion
 Overall, this project demonstrates a practical and scalable approach to load balancing in a distributed system, ensuring high availability, fault tolerance, and efficient resource utilization.
 
 
