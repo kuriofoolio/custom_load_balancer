@@ -178,6 +178,32 @@ Scaling Up: To add more server replicas, ensure that the payload in the POST req
 Scaling Down: To remove server replicas, ensure that the DELETE request to /rm specifies the correct number of instances to be removed and their hostnames if preferred.
 
 Routing Requests: The endpoint /<path> can be used to route requests. Currently, only the /home path is recognized by the server replicas as per the provided code.
+# Task 4- Analysis
+
+## 1. Launch 10,000 Async Requests on N = 3 Server Containers
+
+### Process
+By default, the system has N=3 active replicas. To perform this task, we created a file to launch the 10,000 requests and requested the load balancer to return the count of the requests handled by each server
+![Code](n=3.png)
+We then created a graphs file to plot the results and return the bar graph
+![Bar Chart for N=3](bar_chart_3_servers.png)
+### Observation
+The load balancer employs a random distribution which is shown in the uneven distribution of the 10000 requests across the 3 servers. Despite the uneven distribution, each server successfully handled its share of requests without any failures.
+
+## 2. Increment N from 2 to 6 and Launch 10,000 Requests on Each Increment
+
+### Process
+Using  docker-compose up -d --build --scale app=n, where n is the number of servers, we incremented the number of server replicas from 2 to 6 and run docker ps for each instance to check if each server us running and re-run async_requests file to return the count of requests handled by each server.
+![Code](n=2.png)
+![Code](n=4.png)
+![Code](n=5.png)
+![Code](n=6.png)
+Then in the grapghs file, we plotted the averages for each instance and the result is as follows
+![Line Chart for Average Requests](avg_req_line_chart.png)
+
+### Observation
+The system scaled well with the increasing number of server instances. The load balancer randomly and effectively distributed the 10000 requests across 2 to 6 servers, indicating good scalability.
+
 
 
 
