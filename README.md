@@ -184,9 +184,9 @@ Routing Requests: The endpoint /<path> can be used to route requests. Currently,
 
 ### Process
 By default, the system has N=3 active replicas. To perform this task, we created a file to launch the 10,000 requests and requested the load balancer to return the count of the requests handled by each server
-![Code](n=3.png)
+![Code](C:\Users\MOBILE\Desktop\School\Year 4\DS Notes\n=3.png)
 We then created a graphs file to plot the results and return the bar graph
-![Bar Chart for N=3](bar_chart_3_servers.png)
+![Bar Chart for N=3](C:\Users\MOBILE\Desktop\School\Year 4\Distributed Systems\custom_load_balancer\test\graphs\bar_chart_3_servers.png)
 ### Observation
 The load balancer employs a random distribution which is shown in the uneven distribution of the 10000 requests across the 3 servers. Despite the uneven distribution, each server successfully handled its share of requests without any failures.
 
@@ -194,12 +194,12 @@ The load balancer employs a random distribution which is shown in the uneven dis
 
 ### Process
 Using  docker-compose up -d --build --scale app=n, where n is the number of servers, we incremented the number of server replicas from 2 to 6 and run docker ps for each instance to check if each server us running and re-run async_requests file to return the count of requests handled by each server.
-![Code](n=2.png)
-![Code](n=4.png)
-![Code](n=5.png)
-![Code](n=6.png)
+![Code](C:\Users\MOBILE\Desktop\School\Year 4\DS Notes\n=2.png)
+![Code](C:\Users\MOBILE\Desktop\School\Year 4\DS Notes\n=4.png)
+![Code](C:\Users\MOBILE\Desktop\School\Year 4\DS Notes\n=5.png)
+![Code](C:\Users\MOBILE\Desktop\School\Year 4\DS Notes\n=6.png)
 Then in the grapghs file, we plotted the averages for each instance and the result is as follows
-![Line Chart for Average Requests](avg_req_line_chart.png)
+![Line Chart for Average Requests](C:\Users\MOBILE\Desktop\School\Year 4\Distributed Systems\custom_load_balancer\test\graphs\avg_req_line_chart.png)
 
 ### Observation
 The system scaled well with the increasing number of server instances. The load balancer randomly and effectively distributed the 10000 requests across 2 to 6 servers, indicating good scalability.
