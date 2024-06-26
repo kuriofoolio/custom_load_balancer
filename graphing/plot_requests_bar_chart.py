@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-OUTPUT_DIR='graphs'
+OUTPUT_DIR='img'
 
 # # Data
 # servers = ['Server 1', 'Server 2', 'Server 3']

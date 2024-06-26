@@ -1,6 +1,8 @@
 # Plotting a line graph for the given data
 import matplotlib.pyplot as plt
 
+OUTPUT_DIR='img'
+
 # Data
 x = [2, 3, 4, 5, 6]
 y = [5000, 3333, 2500, 2000, 1667]
@@ -13,4 +15,4 @@ plt.ylabel('Number of Requests')
 plt.title('Average Number of Requests against Number of Servers')
 
 #plt.show()
-plt.savefig('avg_req_line_chart.png')
+plt.savefig(f'{OUTPUT_DIR}/avg_req_line_chart.png')
